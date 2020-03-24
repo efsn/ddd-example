@@ -1,0 +1,15 @@
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgresql://xx:xx#2020@127.0.0.1:5432/xx-tool
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://127.0.0.1:5432/xx-tool
+    username: xx
+    password: xx#2020
+
+  flyway:
+    table: schema_version
+    locations:
+      - classpath:db/migration
+    baseline-on-migrate: true
+    clean-on-validation-error: true

@@ -1,0 +1,15 @@
+logging:
+  config: classpath:logback-spring.groovy
+server:
+  port: 8080
+  compression:
+    enabled: true
+spring:
+  jackson:
+    default-property-inclusion: non_empty
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+  flyway:
+    table: schema_version
+  profiles:
+    active: local

@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  postgres:
+    image: postgres:11.6-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root123
+      POSTGRES_DB: tool
+    ports:
+      - 5432:5432
+    volumes:
+      - data-postgres:/var/lib/postgresql/data
+  portainer:
+    image: portainer/portainer
+    environment:
+      TZ: "Asia/Shangsha"
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+volumes:
+  data-postgres:
