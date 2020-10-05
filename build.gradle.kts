@@ -3,8 +3,8 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-    val kotlinVersion = "1.3.61"
-    val springBootVersion = "2.2.2.RELEASE"
+    val kotlinVersion = "1.4.10"
+    val springBootVersion = "2.3.4.RELEASE"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion

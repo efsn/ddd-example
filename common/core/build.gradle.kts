@@ -1,7 +1,7 @@
 dependencies {
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.3.2")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.3.2")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.3.9")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.3.9")
 
     api("org.springframework.boot:spring-boot-starter-webflux")
     api("org.springframework.boot:spring-boot-starter-actuator")
@@ -12,7 +12,7 @@ dependencies {
     api("org.springframework:spring-tx")
     api("com.fasterxml.jackson.module", "jackson-module-kotlin")
 
-    api("io.jsonwebtoken:jjwt-api:0.10.5")
+    api("io.jsonwebtoken:jjwt-api:0.11.2")
     api("org.javassist:javassist:3.18.2-GA")
     api("com.google.guava:guava:28.1-jre")
 
@@ -28,9 +28,9 @@ dependencies {
     api("org.codehaus.groovy:groovy:2.5.7")
     api("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
-    api("io.springfox:springfox-swagger2:3.0.0-SNAPSHOT")
-    api("io.springfox:springfox-swagger-ui:3.0.0-SNAPSHOT")
-    api("io.springfox:springfox-spring-webflux:3.0.0-SNAPSHOT")
+    api("io.springfox:springfox-swagger2:2.10.5")
+    api("io.springfox:springfox-swagger-ui:2.10.5")
+    api("io.springfox:springfox-spring-webflux:2.10.5")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }

@@ -16,11 +16,11 @@ import springfox.documentation.schema.AlternateTypeRules
 import springfox.documentation.schema.WildcardType
 import springfox.documentation.spi.DocumentationType
 import springfox.documentation.spring.web.plugins.Docket
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux
+import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @ConditionalOnProperty(name = ["swagger.enable"], havingValue = "true")
 @Configuration
-@EnableSwagger2WebFlux
+@EnableSwagger2
 class SwaggerConfiguration(private val resolver: TypeResolver) {
     @Bean
     fun api(): Docket {

@@ -9,14 +9,15 @@ spring:
         - ACTUATOR_ADMIN
         - UPLOAD_ADMIN
         - REFRESH_ADMIN
+        - SWAGGER_ADMIN
 
   r2dbc:
-    url: r2dbc:pool:postgresql://postgres:root123@127.0.0.1:5432/root-tool
+    url: r2dbc:pool:postgresql://postgres:ikea123@127.0.0.1:5432/root-tool
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://127.0.0.1:5432/root-tool
     username: postgres
-    password: root123
+    password: ikea123
 
   flyway:
     locations:

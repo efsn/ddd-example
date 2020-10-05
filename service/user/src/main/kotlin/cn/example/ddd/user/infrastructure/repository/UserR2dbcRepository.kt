@@ -32,4 +32,4 @@ class UserR2dbcRepository(
     }!!
 }
 
-interface UserReactiveRepository : ReactiveCrudRepository<UserPO, Long>
+//interface UserReactiveRepository : ReactiveCrudRepository<UserPO, Long>

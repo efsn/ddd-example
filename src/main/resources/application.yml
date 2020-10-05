@@ -13,3 +13,5 @@ spring:
     table: schema_version
   profiles:
     active: local
+swagger:
+  enable: true
