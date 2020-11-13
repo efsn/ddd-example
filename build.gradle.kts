@@ -4,12 +4,11 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     val kotlinVersion = "1.4.10"
-    val springBootVersion = "2.3.4.RELEASE"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
-    id("org.springframework.boot") version springBootVersion
+    id("org.springframework.boot") version "2.4.0"
 }
 
 group = "cn.example.ddd"
@@ -31,7 +30,6 @@ allprojects {
     }
 
     dependencies {
-        implementation(kotlin("stdlib-jdk8"))
         implementation(kotlin("reflect"))
 
         implementation(platform(SpringBootPlugin.BOM_COORDINATES))

@@ -13,7 +13,8 @@ WORKDIR /home/appuser
 
 COPY --from=build /home/spring-webflux-example/build/libs/spring-webflux-example-*.jar app.jar
 
-RUN apk --no-cache add curl tzdata bash&& cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+RUN apk --no-cache add curl tzdata bash
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && apk del tzdata \
     && addgroup -S appusers \
