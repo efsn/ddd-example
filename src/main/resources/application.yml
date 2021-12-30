@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+spring:
+  messages:
+    basename: messages.core,messages.user
+    encoding: UTF-8
+  jackson:
+    default-property-inclusion: non_empty
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+  flyway:
+    table: schema_version
+
+  profiles:
+    active: local
+swagger:
+  enable: true

@@ -1,0 +1,31 @@
+GET {{host}}/log
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic {{username}} {{password}}
+
+###
+
+POST {{host}}/test/fn
+Accept: application/json
+Content-Type: application/json
+
+{
+  "hi": "hello"
+}
+
+> {%
+client.test("request executed successfully", function() {
+    client.assert(response.status===200,"response status is not 200")
+});
+client.test("headers option exists", function() {
+  client.assert(response.body.hasOwnProperty("world"),"can't find 'world' in body")
+});
+client.test("response content-type is json", function() {
+  var type=response.contentType.mimeType;
+  client.assert(type==="application/json","expected 'application/json' but received '"+type+"'")
+});
+%}
+
+###
+
+

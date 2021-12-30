@@ -1,0 +1,9 @@
+spring:
+  cache:
+    type: none
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_empty
+  messages:
+    basename: messages.core
+    encoding: UTF-8

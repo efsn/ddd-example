@@ -1,0 +1,29 @@
+logging.level.org.springframework.data.r2dbc: INFO
+
+spring:
+  security:
+    user:
+      name: admin
+      password: user#2022
+      roles:
+        - ACTUATOR_ADMIN
+        - UPLOAD_ADMIN
+        - REFRESH_ADMIN
+        - SWAGGER_ADMIN
+
+  r2dbc:
+    url: r2dbc:pool:postgresql://postgres:Pa55w0rd@127.0.0.1:5432/ddd-example
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://127.0.0.1:5432/ddd-example
+    username: postgres
+    password: Pa55w0rd
+
+  flyway:
+    locations:
+      - classpath:db/migration
+    baseline-on-migrate: true
+    clean-on-validation-error: true
+example:
+  security:
+    rsaPubKey: '{"kty":"RSA","kid":"5284653461972686632","alg":"RS256","n":"gePx5XoDT-fLB8EmJeSkS024DRb7PqVAKR7ah1UGt_w4kNUVht7fZrmiRB5QxWS_aMkzMCHMDgZigF1b8KC576DDQG_aUOontd8G3SbUtvNF-1yIuI2Q1plyxAyY0z02p0CXlgN9-GivpXOzeN__vOQQBQOZq1QSPx8iYAddAZjdSzjHWBTGpaPZECEvMo0N4oK2Eo_Gfykw0vZVVKruqUNkOfQgxcEO90jz-VrfEhpwoGfEKG1j_dYBiQKFtGUQcjlGxBMWecTWN8ujLxCQN8NgWrNauePxbrHIh9oe_oc5HM8xqMlut3ceq5ggIG_u5B_Mqt8Qbtww_3yhuyQ0YQ","e":"AQAB"}'
