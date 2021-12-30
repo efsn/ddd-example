@@ -1,6 +1,6 @@
-plugins {
-    `maven-publish`
-}
+// plugins {
+//     `maven-publish`
+// }
 
 dependencies {
     api("org.springframework.boot:spring-boot-starter-webflux")

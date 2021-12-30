@@ -46,7 +46,9 @@ allprojects {
                 freeCompilerArgs = listOf("-Xjsr305=strict")
             }
         }
+
         test {
+            project.setProperty("testResultsDirName", "$rootDir/build/test-results")
             failFast = true
             useJUnitPlatform()
             testLogging {
