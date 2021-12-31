@@ -1,6 +1,5 @@
 version: 2.1
 
-
 jobs:
   build:
     working_directory: ~/ddd-example
@@ -15,8 +14,6 @@ jobs:
       TERM: dumb
 
     steps:
-      # circleci-install java openjdk11
-      - run: java --version
       - checkout
       - restore_cache:
           keys:
