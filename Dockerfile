@@ -1,30 +1,27 @@
-FROM openjdk:8-jdk-alpine as build
+FROM openjdk:11-jdk-slim as build
 
 WORKDIR /home
 
-add . /home
-run sh ./gradlew clean spring-webflux-example:bootJar
+ADD . /home
+RUN sh ./gradlew clean bootJar
 
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11-jre-slim
 
-LABEL org.label-schema.docker.cmd="docker run -p 8080:8080 -d registry.cn-shanghai.aliyuncs.com/app/ddd-example:latest"
+LABEL org.label-schema.docker.cmd="docker run -p 8080:8080 -d elmi/ddd-example:latest"
 
 WORKDIR /home/appuser
 
-COPY --from=build /home/spring-webflux-example/build/libs/spring-webflux-example-*.jar app.jar
+COPY --from=build /home/build/libs/ddd-example-*.jar app.jar
+COPY --from=build /home/entrypoint.sh entrypoint.sh
 
-RUN apk --no-cache add curl tzdata bash
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
-    && apk del tzdata \
-    && addgroup -S appusers \
-    && adduser -S appuser -G appusers \
+    && addgroup --system appusers \
+    && adduser --system appuser --ingroup appusers \
     && chmod g+r,g+w,g+X -R /home/appuser/
 
 USER appuser
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-XX:+UnlockExperimentalVMOptions","-XX:+UseCGroupMemoryLimitForHeap","-Dfile.encoding=UTF-8","-jar","/home/appuser/app.jar"]
-
-CMD ["java","-jar","/home/appuser/app.jar"]
+ENTRYPOINT ["bash","/home/appuser/entrypoint.sh"]

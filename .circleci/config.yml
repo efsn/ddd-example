@@ -29,3 +29,5 @@ jobs:
           path: build/test-results/test
       - store_artifacts:
           path: build/libs/
+
+# build image & push check

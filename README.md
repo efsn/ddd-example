@@ -1,5 +1,7 @@
 # DDD Example
 
+[![CircleCI](https://circleci.com/gh/efsn/ddd-example/tree/master.svg?style=svg)](https://circleci.com/gh/efsn/ddd-example/tree/master)
+[![Drone](https://cloud.drone.io/api/badges/efsn/ddd-example/status.svg)](https://cloud.drone.io/efsn/ddd-example)
 ![Build Status](https://img.shields.io/github/workflow/status/efsn/ddd-example/CI)
 ![Docker Pulls](https://img.shields.io/docker/pulls/efsn/ddd-example.svg)
 [![GitHub release](https://img.shields.io/github/release/efsn/ddd-example.svg)](https://GitHub.com/efsn/ddd-example/releases/)
