@@ -23,9 +23,6 @@ jobs:
           architecture: x64
           cache: gradle
 
-      - name: Gradle wrapper validation
-        uses: gradle/wrapper-validation-action@v1.0.4
-
       - name: Run gradle dependences task
         run: ./gradlew clean dependencies
 
