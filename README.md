@@ -117,4 +117,6 @@ Pipeline Stage
 - Deploy
 -
 
-
+**Badges**
+- Test
+- Coverage
