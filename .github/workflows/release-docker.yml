@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3.6.2
         with:
-          images: ${{env.REGISTRY}}/${{env.IMAGE_NAME}}
+          images: elmi/ddd-example
 
       - name: Build & Push
         uses: docker/build-push-action@v2.7.0
