@@ -5,8 +5,8 @@
 [![Build Status](https://img.shields.io/github/workflow/status/efsn/ddd-example/CI)](https://github.com/efsn/ddd-example)
 [![GitHub release](https://img.shields.io/github/release/efsn/ddd-example.svg)](https://gitHub.com/efsn/ddd-example/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/elmi/ddd-example.svg)](https://hub.docker.com/r/elmi/ddd-example)
-[![GitHub stars](https://img.shields.io/github/stars/efsn/ddd-example.svg)](https://github.com/efsn/ddd-example/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/efsn/ddd-example.svg)](https://github.com/efsn/ddd-example/network/members)
+<!-- [![GitHub stars](https://img.shields.io/github/stars/efsn/ddd-example.svg)](https://github.com/efsn/ddd-example/stargazers) -->
+<!-- [![GitHub forks](https://img.shields.io/github/forks/efsn/ddd-example.svg)](https://github.com/efsn/ddd-example/network/members) -->
 [![Change log](https://img.shields.io/badge/change%20log-%E2%96%A4-e53994.svg)](https://gitHub.com/efsn/ddd-example/releases)
 [![codecov](https://codecov.io/gh/efsn/ddd-example/branch/master/graph/badge.svg)](https://codecov.io/gh/efsn/ddd-example)
 [![Open Source Helpers](https://www.codetriage.com/efsn/ddd-example/badges/users.svg)](https://www.codetriage.com/efsn/ddd-example)
