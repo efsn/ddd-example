@@ -3,7 +3,7 @@ name: Release to docker
 on:
   push:
     tags:
-      - "*"
+      - '*.*.*'
 
 jobs:
   workflows:
