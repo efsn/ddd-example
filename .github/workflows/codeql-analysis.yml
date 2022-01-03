@@ -26,7 +26,7 @@ jobs:
       - name: Init codeql
         uses: github/codeql-action/init@v1
         with:
-          languages: kotlin
+          languages: java
           config-file: ./.github/codeql/config.yml
 
       - name: Auto build
