@@ -27,7 +27,7 @@ jobs:
         uses: gradle/wrapper-validation-action@v1.0.4
 
       - name: Run gradle dependences task
-        run: ./gradlew clean dependences
+        run: ./gradlew clean dependencies
 
       - name: Run gradle bootJar task
         run: ./gradlew bootJar
