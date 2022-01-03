@@ -1,0 +1,12 @@
+version: 2.1
+
+name: Codeql config
+
+queries:
+  - uses: security-and-quality
+
+paths-ignore:
+  - '/cpp/'
+  - '/python/'
+  - '/javascript/ql/test'
+  - '/javascript/extractor/tests'

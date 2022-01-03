@@ -1,0 +1,36 @@
+name: Code scanning
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 3 * * 1'
+
+jobs:
+  codeql-build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+      pull-requests: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Init codeql
+        uses: github/codeql-action/init@v1
+        with:
+          languages: kotlin
+          config-file: ./.github/codeql/config.yml
+
+      - name: Auto build
+        uses: github/codeql-action/autobuild@v1
+
+      - name: Perform codeql analysis
+        uses: github/codeql-action/analyze@v1
