@@ -1,15 +1,9 @@
-name: Release
+name: Release to docker
 
 on:
   push:
-    branches:
-      - release/*
     tags:
-      - v*
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{github.repository}}
+      - *
 
 jobs:
   workflows:
@@ -25,9 +19,8 @@ jobs:
       - name: Container registry Login
         uses: docker/login-action@v1.12.0
         with:
-          registry: ${{env.REGISTRY}}
-          username: ${{github.actor}}
-          password: ${{secrets.GITHUB_TOKEN}}
+          username: elmi
+          password: ${{secrets.DOCKER_PWD}}
 
       - name: Docker Metadata action
         id: meta
