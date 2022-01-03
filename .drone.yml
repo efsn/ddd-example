@@ -3,11 +3,11 @@ kind: pipeline
 name: ddd-example
 type: docker
 steps:
-  - name: checkout
-    image: alpine:git
-    commands:
-      - git clone https://github.com/efsn/ddd-example.git .
-      - git pull -r
+#  - name: checkout
+  #    image: alpine:git
+  #    commands:
+  #      - git clone https://github.com/efsn/ddd-example.git .
+  #      - git pull -r
 
   - name: test
     image: openjdk:11-jdk-slim
