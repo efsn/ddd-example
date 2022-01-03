@@ -1,0 +1,29 @@
+---
+kind: pipeline
+name: ddd-example
+type: docker
+steps:
+  - name: checkout
+    image: alpine:git
+    commands:
+      - git clone https://github.com/efsn/ddd-example.git .
+      - git pull -r
+
+  - name: test
+    image: openjdk:11-jdk-slim
+    commands:
+      - ./gradlew clean classes
+
+  - name: notify
+    image: plugins/slack
+    settings:
+      webhook: https://hooks.slack.com/services/
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
+#---
+#kind: signature
+#hmac: x

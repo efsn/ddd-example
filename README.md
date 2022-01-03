@@ -107,5 +107,14 @@ git message factor
   "org.sonarqube:3.3"
 ```
 
+Pipeline Stage
+- Git
+- Unit Test
+- Code Analysis
+- Test Coverage
+- Build image
+- Upload image
+- Deploy
+-
 
 
