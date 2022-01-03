@@ -3,9 +3,8 @@ name: Release to github package
 on:
   push:
     branches:
-      - release/*
-    tags:
-      - *
+      - release/**
+    tags: ["**"]
 
 env:
   REGISTRY: ghcr.io

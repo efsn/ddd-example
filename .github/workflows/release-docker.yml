@@ -1,9 +1,9 @@
 name: Release to docker
 
 on:
-  push:
-    tags:
-      - *
+  release:
+    types:
+      - published
 
 jobs:
   workflows:
