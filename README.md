@@ -57,14 +57,14 @@ config in repo locally:
 
 ```
 git config --local user.name 'Lastname Firstname'
-git config --local user.email 'xxx@thoughtworks.com'
+git config --local user.email 'xxx@domain.com'
 ```
 
 or config globally:
 
 ```
 git config --local user.name 'Lastname Firstname'
-git config --local user.email 'xxx@thoughtworks.com'
+git config --local user.email 'xxx@domain.com'
 ```
 
 ##### Git commit message
