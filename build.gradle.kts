@@ -18,9 +18,9 @@ version = "1.1.0-SNAPSHOT"
 allprojects {
     apply(plugin = "java-library")
     apply(plugin = "kotlin")
+    apply(plugin = "jacoco")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(from = rootProject.file("gradle/ktlint.gradle.kts"))
-    apply(plugin = "jacoco")
 
     repositories {
         maven(url = "https://maven.aliyun.com/repository/public/")
@@ -70,6 +70,8 @@ allprojects {
     }
 
 }
+
+apply(from = rootProject.file("gradle/hooks.gradle.kts"))
 
 dependencies {
     implementation(project("core"))
