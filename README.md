@@ -118,7 +118,7 @@ Pipeline Stage
 - Build image
 - Upload image
 - Deploy
--
+- Image scan `grype`
 
 **Badges**
 - Test
