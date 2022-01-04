@@ -4,7 +4,7 @@ tasks {
         if (!old.exists()) {
             from(rootProject.file("gradle/scripts/pre-commit"))
             into(rootProject.file(".git/hooks"))
-            Runtime.getRuntime().exec("chmod -R +x .git/hooks")
+            setFileMode(0b111101101)
         }
     }
     named("ktlint") { dependsOn("copyGitHooks") }
