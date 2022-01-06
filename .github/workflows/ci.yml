@@ -23,8 +23,8 @@ jobs:
           architecture: x64
           cache: gradle
 
-      - name: Run gradle test task
-        run: ./gradlew test
+      - name: Run gradle check task
+        run: ./gradlew check
 
       - name: Run gradle bootJar task
         run: ./gradlew bootJar

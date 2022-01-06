@@ -1,12 +1,12 @@
 name: Code scanning
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  #  push:
+  #    branches:
+  #      - master
+  #  pull_request:
+  #    branches:
+  #      - master
   schedule:
     - cron: '0 3 * * 1'
 
@@ -26,7 +26,7 @@ jobs:
       - name: Init codeql
         uses: github/codeql-action/init@v1
         with:
-          languages: java
+          languages: java # kotlin not supported
           config-file: ./.github/codeql/config.yml
 
       - name: Auto build
