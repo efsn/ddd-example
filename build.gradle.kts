@@ -125,7 +125,7 @@ allprojects {
             ktlint("0.43.2")
                 .userData(
                     mapOf(
-                        "editorconfig" to project.file(".editorconfig").absolutePath
+                        "editorconfig" to rootProject.file(".editorconfig").absolutePath
                     )
                 )
             licenseHeader("/* (C)\$YEAR */") // or licenseHeaderFile
