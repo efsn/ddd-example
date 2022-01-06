@@ -24,6 +24,7 @@ allprojects {
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(plugin = "io.gitlab.arturbosch.detekt")
     apply(from = rootProject.file("gradle/ktlint.gradle.kts"))
+    // apply(from = rootProject.file("gradle/spotless.gradle.kts"))
 
     repositories {
         maven(url = "https://maven.aliyun.com/repository/public/")
@@ -81,7 +82,7 @@ allprojects {
                 txt.outputLocation.set(file("${rootProject.buildDir}/reports/${project.name}.txt"))
 
                 sarif.required.set(true)
-                sarif.outputLocation.set(file("${rootProject.buildDir}/reports/${project.name}.sarif"))
+                sarif.outputLocation.set(file("${rootProject.buildDir}/reports/detekt.sarif"))
             }
         }
     }
