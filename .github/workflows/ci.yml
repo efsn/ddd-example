@@ -26,6 +26,19 @@ jobs:
       - name: Run gradle check task
         run: ./gradlew check
 
+      - run: |
+          pwd
+          ls -a build/reports/jacoco/test
+
+      - name: Codecov
+        uses: codecov/codecov-action@v2.1.0
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          directory: build/reports/jacoco/test
+          files: jacocoTestReport.xml
+          fail_ci_if_error: false # optional (default = false)
+          verbose: true # optional (default = false)
+
       - name: Run gradle bootJar task
         run: ./gradlew bootJar
 
@@ -39,17 +52,6 @@ jobs:
         run: |
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
           rm -f ~/.gradle/caches/modules-2/gc.properties
-      - run: |
-          ls -a build/reports/jacoco/test
-
-      - name: Codecov
-        uses: codecov/codecov-action@v2.1.0
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          directory: build/reports/jacoco/test
-          files: jacocoTestReport.xml
-          fail_ci_if_error: false # optional (default = false)
-          verbose: true # optional (default = false)
 
 #  quality:
 #  build image/upload image hub/ docker in docker or vm?
