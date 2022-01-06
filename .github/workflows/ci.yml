@@ -40,7 +40,7 @@ jobs:
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
           rm -f ~/.gradle/caches/modules-2/gc.properties
       - run: |
-          cat ./build/reports/jacoco/test/jacocoTestReport.xml
+          ls ./build/reports/jacoco/test/
 
       - name: Codecov
         uses: codecov/codecov-action@v2.1.0
