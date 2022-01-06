@@ -12,7 +12,7 @@ dependencies {
     runtimeOnly("org.junit.jupiter:junit-jupiter-engine")
     api("io.projectreactor:reactor-test")
 
-    api("com.github.tomakehurst:wiremock-jre8:2.32.0")
+    // api("com.github.tomakehurst:wiremock-jre8:2.32.0")
     // api("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     // TODO: mockk component instead of mockito
 

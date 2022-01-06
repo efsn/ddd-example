@@ -1,3 +1,4 @@
+import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 import org.springframework.boot.gradle.tasks.bundling.BootJar
@@ -10,6 +11,7 @@ plugins {
     kotlin("plugin.jpa") version kotlinVersion
     id("org.springframework.boot") version "2.6.2"
     jacoco
+    id("io.gitlab.arturbosch.detekt") version "1.19.0"
 }
 
 group = "cn.example.ddd"
@@ -20,6 +22,7 @@ allprojects {
     apply(plugin = "kotlin")
     apply(plugin = "jacoco")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
+    apply(plugin = "io.gitlab.arturbosch.detekt")
     apply(from = rootProject.file("gradle/ktlint.gradle.kts"))
 
     repositories {
@@ -37,6 +40,8 @@ allprojects {
         implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.0"))
         implementation(platform("com.github.cloudyrock.mongock:mongock-core-bom:4.3.8"))
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
+
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
     }
 
     tasks {
@@ -59,8 +64,25 @@ allprojects {
 
         jacocoTestReport {
             dependsOn("test")
-            reports { xml.isEnabled = true }
+            reports { xml.required.set(true) }
             classDirectories.exclude(jacocoExcludeList)
+        }
+
+        withType<Detekt> {
+            config.from(files("$rootDir/gradle/config/detekt.yml"))
+            reports {
+                xml.required.set(true)
+                xml.outputLocation.set(file("${rootProject.buildDir}/reports/${project.name}.xml"))
+
+                html.required.set(true)
+                html.outputLocation.set(file("${rootProject.buildDir}/reports/${project.name}.html"))
+
+                txt.required.set(false)
+                txt.outputLocation.set(file("${rootProject.buildDir}/reports/${project.name}.txt"))
+
+                sarif.required.set(true)
+                sarif.outputLocation.set(file("${rootProject.buildDir}/reports/${project.name}.sarif"))
+            }
         }
     }
 
@@ -69,6 +91,15 @@ allprojects {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
+    // Config Detekt
+    detekt {
+        toolVersion = "1.19.0"
+        parallel = true
+        buildUponDefaultConfig = true
+        allRules = false
+        ignoreFailures = true
+        autoCorrect = true
+    }
 }
 
 apply(from = rootProject.file("gradle/hooks.gradle.kts"))

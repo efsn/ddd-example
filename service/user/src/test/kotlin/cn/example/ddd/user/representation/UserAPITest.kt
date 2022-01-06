@@ -6,13 +6,16 @@ import cn.example.ddd.user.application.UserApplicationService
 import cn.example.ddd.user.domain.model.entity.User
 import cn.example.ddd.user.representation.request.UserCreateRequest
 import cn.example.ddd.user.representation.request.toCommand
+import cn.example.ddd.user.representation.response.UserCreateResponse
 import com.ninjasquad.springmockk.MockkBean
 import io.mockk.coEvery
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.context.annotation.Import
 import org.springframework.http.MediaType.APPLICATION_JSON
+import org.springframework.test.web.reactive.server.expectBody
 
 @Import(UserAPI::class)
 @ExperimentalCoroutinesApi
@@ -42,5 +45,9 @@ internal class UserAPITest : BaseAPITest(), CoroutineTestSupport by CoroutineTes
             )
             .exchange()
             .expectStatus().isOk
+            .expectBody< UserCreateResponse>()
+            .consumeWith {
+                assertEquals(1, it.responseBody?.id)
+            }
     }
 }

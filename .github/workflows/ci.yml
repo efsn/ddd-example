@@ -23,9 +23,6 @@ jobs:
           architecture: x64
           cache: gradle
 
-      - name: Run gradle dependences task
-        run: ./gradlew clean dependencies
-
       - name: Run gradle test task
         run: ./gradlew test
 
