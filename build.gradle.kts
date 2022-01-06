@@ -177,9 +177,8 @@ val jacocoExcludeList = listOf(
 
 tasks {
     withType<JacocoReport> {
-        dependsOn("test")
+        dependsOn(allprojects.map { it.tasks.getByName("test") })
         reports { xml.required.set(true) }
-        dependsOn(subprojects.map { it.tasks.getByName("test") })
         val childTask = subprojects.map { it.tasks.named<JacocoReport>("jacocoTestReport").get() }
         sourceDirectories.setFrom(childTask.flatMap { it.sourceDirectories.files })
         classDirectories.setFrom(childTask.flatMap { it.classDirectories.files })
@@ -208,7 +207,7 @@ tasks {
         }
     }
 
-    named("check") {
+    check {
         dependsOn("jacocoTestCoverageVerification")
     }
 }
