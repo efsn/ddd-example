@@ -39,12 +39,15 @@ jobs:
         run: |
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
           rm -f ~/.gradle/caches/modules-2/gc.properties
+      - run: |
+          cat ./build/reports/jacoco/test/jacocoTestReport.xml
 
       - name: Codecov
         uses: codecov/codecov-action@v2.1.0
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          files: ./build/reports/jacoco/test/jacocoTestReport.xml
+          directory: ./build/reports/jacoco/test
+          files: ./jacocoTestReport.xml
           fail_ci_if_error: false # optional (default = false)
           verbose: true # optional (default = false)
 
