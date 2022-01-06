@@ -12,6 +12,7 @@ plugins {
     id("org.springframework.boot") version "2.6.2"
     jacoco
     id("io.gitlab.arturbosch.detekt") version "1.19.0"
+    id("com.diffplug.spotless") version "6.1.0"
 }
 
 group = "cn.example.ddd"
@@ -23,8 +24,8 @@ allprojects {
     apply(plugin = "jacoco")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(plugin = "io.gitlab.arturbosch.detekt")
+    apply(plugin = "com.diffplug.spotless")
     apply(from = rootProject.file("gradle/ktlint.gradle.kts"))
-    // apply(from = rootProject.file("gradle/spotless.gradle.kts"))
 
     repositories {
         maven(url = "https://maven.aliyun.com/repository/public/")
@@ -101,6 +102,40 @@ allprojects {
         ignoreFailures = true
         autoCorrect = true
     }
+
+    // Config Detekt
+    spotless {
+        ratchetFrom("origin/master")
+
+        format("misc") {
+            target("*.gradle.kts", "*.md", ".gitignore")
+            trimTrailingWhitespace()
+            indentWithSpaces()
+            endWithNewline()
+        }
+
+        java {
+            importOrder()
+            removeUnusedImports()
+            googleJavaFormat("1.13.0").aosp().reflowLongStrings()
+            licenseHeader("/* (C)\$YEAR */")
+        }
+
+        kotlin {
+            ktlint("0.43.2")
+                .userData(
+                    mapOf(
+                        "editorconfig" to project.file(".editorconfig").absolutePath
+                    )
+                )
+            licenseHeader("/* (C)\$YEAR */") // or licenseHeaderFile
+        }
+
+        kotlinGradle {
+            target("*.gradle.kts")
+            ktlint()
+        }
+    }
 }
 
 apply(from = rootProject.file("gradle/hooks.gradle.kts"))
@@ -143,7 +178,7 @@ val jacocoExcludeList = listOf(
 tasks {
     withType<JacocoReport> {
         dependsOn(subprojects.map { it.tasks.getByName("test") })
-        reports { xml.isEnabled = true }
+        reports { xml.required.set(true) }
         val childTask = subprojects.map { it.tasks.named<JacocoReport>("jacocoTestReport").get() }
         sourceDirectories.setFrom(childTask.flatMap { it.sourceDirectories.files })
         classDirectories.setFrom(childTask.flatMap { it.classDirectories.files })
