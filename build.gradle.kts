@@ -116,7 +116,7 @@ allprojects {
             importOrder()
             removeUnusedImports()
             googleJavaFormat("1.13.0").aosp().reflowLongStrings()
-            licenseHeader("/* (C)\$YEAR */")
+            licenseHeaderFile(rootProject.file(".license-header"))
         }
 
         kotlin {
@@ -126,7 +126,7 @@ allprojects {
                         "editorconfig" to rootProject.file(".editorconfig").absolutePath
                     )
                 )
-            licenseHeader("/* (C)\$YEAR */") // or licenseHeaderFile
+            licenseHeaderFile(rootProject.file(".license-header"))
         }
 
         kotlinGradle {

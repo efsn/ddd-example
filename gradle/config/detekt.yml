@@ -51,7 +51,7 @@ comments:
   active: true
   AbsentOrWrongFileLicense:
     active: false
-    licenseTemplateFile: 'license.template'
+    licenseTemplateFile: '.license-header'
     licenseTemplateIsRegex: false
   CommentOverPrivateFunction:
     active: false

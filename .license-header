@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2022 Bug.S.C Chen (efsn.chan@gmail.com).
+* Copyright (C) $YEAR Bug.S.C Chen (efsn.chan@gmail.com).
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -13,12 +13,3 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package cn.example.ddd.user.representation.response
-
-import cn.example.ddd.user.domain.model.entity.User
-
-data class UserCreateResponse(
-    val id: Long?
-) {
-    constructor(entity: User) : this(entity.id)
-}

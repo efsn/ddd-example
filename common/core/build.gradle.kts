@@ -38,6 +38,5 @@ dependencies {
 //    api("org.zalando:logbook-logstash")
 //    api("net.logstash.logback:logstash-logback-encoder:6.6")
 
-
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
