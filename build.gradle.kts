@@ -105,8 +105,6 @@ allprojects {
 
     // Config Detekt
     spotless {
-        ratchetFrom("origin/master")
-
         format("misc") {
             target("*.gradle.kts", "*.md", ".gitignore")
             trimTrailingWhitespace()

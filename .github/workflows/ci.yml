@@ -35,7 +35,8 @@ jobs:
           name: Package
           path: build/libs
 
-      - run: |
+      - name: Build jacoco report for codecov
+        run: |
           ./gradlew jacocoTestReport
 
       - name: Codecov

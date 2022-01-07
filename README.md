@@ -105,7 +105,6 @@ git message factor
 ```
 <!--  plugin -->
   "project-report"
-  "com.diffplug:spotless:6.0.4"
   "com.github.johnrengelman.shadow:6.1.0"
   "org.sonarqube:3.3"
 ```
