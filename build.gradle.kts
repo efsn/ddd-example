@@ -64,6 +64,12 @@ allprojects {
             dependsOn(project.tasks.named("ktlint"))
         }
 
+        jacocoTestReport {
+            dependsOn("test")
+            reports { xml.required.set(true) }
+            classDirectories.exclude(jacocoExcludeList)
+        }
+
         withType<Detekt> {
             config.from(files("$rootDir/gradle/config/detekt.yml"))
             reports {
@@ -132,16 +138,6 @@ allprojects {
     }
 }
 
-subprojects {
-    tasks {
-        jacocoTestReport {
-            dependsOn("test")
-            reports { xml.required.set(true) }
-            classDirectories.exclude(jacocoExcludeList)
-        }
-    }
-}
-
 apply(from = rootProject.file("gradle/hooks.gradle.kts"))
 
 dependencies {
@@ -181,7 +177,6 @@ val jacocoExcludeList = listOf(
 
 tasks {
     withType<JacocoReport> {
-        dependsOn("test")
         dependsOn(subprojects.map { it.tasks.getByName("jacocoTestReport") })
         reports { xml.required.set(true) }
         val childTask = subprojects.map { it.tasks.named<JacocoReport>("jacocoTestReport").get() }
@@ -212,7 +207,7 @@ tasks {
         }
     }
 
-    check {
+    named("check") {
         dependsOn("jacocoTestCoverageVerification")
     }
 }
