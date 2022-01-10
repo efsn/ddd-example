@@ -11,12 +11,16 @@
 [![codecov](https://codecov.io/gh/efsn/ddd-example/branch/master/graph/badge.svg)](https://codecov.io/gh/efsn/ddd-example)
 [![Open Source Helpers](https://www.codetriage.com/efsn/ddd-example/badges/users.svg)](https://www.codetriage.com/efsn/ddd-example)
 
+[![License: Apache-2.0][license-img]][license]
+
 A minimal implementation of microservice framework based on `DDD` domain design principal thought.
 
-## Package Structure
+## Project Structure
 
 ```tree
 .
+├── .circleci            ## Circle CI
+├── .github              ## GitHub workflow
 ├── common               ## 通用模块目录
 │   ├── core              # 核心组件
 │   ├── core-test         # 核心测试组件
@@ -28,11 +32,48 @@ A minimal implementation of microservice framework based on `DDD` domain design 
 ├── httpclient           ## API测试工具
 ├── service              ## 业务模块
 ├── src                  ## 应用源码目录
+├── .codecov.yml         # Code coverage config
+├── .drone.yml           # Drone pipeline config
 ├── .editorconfig        # Editorconfig
 ├── .gitattributes       # Git属性
 ├── .gitignore           # Git ignore
+├── .license-header      # License header template
 ├── build.gradle.kts     # Gradle build配置
 ├── Dockerfile           # Dockerfile
+├── entrypoint.sh        # Entrypoint for dockerfile
+├── gradlew              # gradlew cmd
+├── gradlew.bat          # gradlew bat cmd
+├── LICENSE              # License
+├── README.md            # README文档
+└── settings.gradle.kts  # gradle settings配置
+```
+
+### DDD Package Structure
+
+```tree
+.
+├── .circleci            ## Circle CI
+├── .github              ## GitHub workflow
+├── common               ## 通用模块目录
+│   ├── core              # 核心组件
+│   ├── core-test         # 核心测试组件
+├── devops               ## 基础设施
+│   ├── docker            # Docker配置
+│   ├── k8s               # K8s配置
+├── external             ## 外部模块
+├── gradle               ## Gradle配置
+├── httpclient           ## API测试工具
+├── service              ## 业务模块
+├── src                  ## 应用源码目录
+├── .codecov.yml         # Code coverage config
+├── .drone.yml           # Drone pipeline config
+├── .editorconfig        # Editorconfig
+├── .gitattributes       # Git属性
+├── .gitignore           # Git ignore
+├── .license-header      # License header template
+├── build.gradle.kts     # Gradle build配置
+├── Dockerfile           # Dockerfile
+├── entrypoint.sh        # Entrypoint for dockerfile
 ├── gradlew              # gradlew cmd
 ├── gradlew.bat          # gradlew bat cmd
 ├── LICENSE              # License
