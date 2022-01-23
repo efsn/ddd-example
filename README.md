@@ -131,7 +131,7 @@ git message factor
   - SonarQube、FindBugs
   - CI
   - 依赖安全扫描
-  - 镜像安全扫描
+  - 镜像安全扫描 https://github.com/aquasecurity/trivy
 - 密钥管理（KV）
   - 如Talisman、git-secrets
 - 契约测试
