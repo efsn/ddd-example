@@ -9,7 +9,7 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
-    id("org.springframework.boot") version "2.6.3"
+    id("org.springframework.boot") version "2.6.6"
     jacoco
     id("io.gitlab.arturbosch.detekt") version "1.19.0"
     id("com.diffplug.spotless") version "6.2.2"
