@@ -43,7 +43,7 @@ allprojects {
         implementation(platform("com.github.cloudyrock.mongock:mongock-core-bom:4.3.8"))
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
 
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.20.0")
     }
 
     tasks {
