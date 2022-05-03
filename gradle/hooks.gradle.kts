@@ -9,3 +9,15 @@ tasks {
     }
     named("ktlint") { dependsOn("copyGitHooks") }
 }
+
+/*
+
+tasks.withType<ProcessResources> {
+    copy {
+        from(file("$projectDir/git-hooks"))
+        into(file("$projectDir/.git/hooks"))
+        fileMode = 0b111101101
+    }
+}
+
+ */

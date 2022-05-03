@@ -1,7 +1,7 @@
 val ktlint by configurations.creating
 
 dependencies {
-    ktlint("com.pinterest:ktlint:0.43.2")
+    ktlint("com.pinterest:ktlint:0.45.2")
 }
 
 val outputDir = "$buildDir/reports/ktlint"

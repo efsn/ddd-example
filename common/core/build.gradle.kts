@@ -15,7 +15,7 @@ dependencies {
 
     api("io.jsonwebtoken:jjwt-api:0.11.2")
     api("org.javassist:javassist:3.28.0-GA")
-    api("com.google.guava:guava:31.0.1-jre")
+    api("com.google.guava:guava:31.1-jre")
 
     api("org.springframework.boot:spring-boot-starter-data-r2dbc")
     api("org.springframework.boot:spring-boot-starter-jdbc")
@@ -23,10 +23,10 @@ dependencies {
     api("io.r2dbc:r2dbc-spi")
     api("io.r2dbc:r2dbc-pool")
     api("io.r2dbc:r2dbc-postgresql")
-    api("org.postgresql:postgresql:42.3.1")
+    api("org.postgresql:postgresql:42.3.4")
 
-    api("io.projectreactor.addons:reactor-extra:3.4.6")
-    api("org.codehaus.groovy:groovy:3.0.8")
+    api("io.projectreactor.addons:reactor-extra:3.4.8")
+    api("org.codehaus.groovy:groovy:3.0.10")
     api("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
     api("io.springfox:springfox-swagger2:3.0.0")

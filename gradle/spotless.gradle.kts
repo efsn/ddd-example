@@ -1,5 +1,5 @@
 plugins {
-    id("com.diffplug.spotless") version "6.2.0"
+    id("com.diffplug.spotless") version "6.2.2"
 }
 
 spotless {
@@ -33,7 +33,7 @@ spotless {
     }
 
     kotlin {
-        ktlint("0.43.2")
+        ktlint("0.45.2")
             .userData(
                 mapOf(
                     "editorconfig" to project.file(".editorconfig").absolutePath

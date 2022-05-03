@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2022 Bug.S.C Chen (efsn.chan@gmail.com).
+* Copyright (C) 2022 Arthur Chen (efsn.chan@gmail.com).
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.

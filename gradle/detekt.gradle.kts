@@ -1,9 +1,9 @@
 plugins {
-    id("io.gitlab.arturbosch.detekt") version "1.19.0"
+    id("io.gitlab.arturbosch.detekt") version "1.20.0"
 }
 
 detekt {
-    toolVersion = "1.19.0"
+    toolVersion = "1.20.0"
     parallel = true
     allRules = false
     reports {
@@ -15,7 +15,7 @@ detekt {
 }
 
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.20.0")
 }
 
 tasks.register<io.gitlab.arturbosch.detekt.Detekt>("myDetekt") {
