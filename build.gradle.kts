@@ -12,7 +12,7 @@ plugins {
     id("org.springframework.boot") version "2.6.7"
     jacoco
     id("io.gitlab.arturbosch.detekt") version "1.20.0"
-    id("com.diffplug.spotless") version "6.5.1"
+    id("com.diffplug.spotless") version "6.6.1"
 }
 
 group = "cn.example.ddd"
