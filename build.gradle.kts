@@ -42,7 +42,7 @@ allprojects {
         implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.2"))
         implementation(platform("com.github.cloudyrock.mongock:mongock-core-bom:4.3.8"))
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
-        implementation(platform("org.testcontainers:testcontainers-bom:1.16.3"))
+        implementation(platform("org.testcontainers:testcontainers-bom:1.17.2"))
 
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.20.0")
 
