@@ -45,7 +45,7 @@ class R2dbcRepositoryTestConfiguration {
     @Bean
     fun connectionFactory(pgContainer: PostgreSQLContainer<Nothing>) = PostgresqlConnectionFactory(
         PostgresqlConnectionConfiguration.builder()
-            .host("127.0.0.1")
+            .host(pgContainer.host)
             .port(pgContainer.getMappedPort(POSTGRESQL_PORT))
             .database(pgContainer.databaseName)
             .username(pgContainer.username)

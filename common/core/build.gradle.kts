@@ -13,8 +13,8 @@ dependencies {
     api("org.springframework:spring-tx")
     api("javax.validation:validation-api:2.0.1.Final")
 
-    api("io.jsonwebtoken:jjwt-api:0.11.2")
-    api("org.javassist:javassist:3.28.0-GA")
+    api("io.jsonwebtoken:jjwt-api")
+    api("org.javassist:javassist:3.29.0-GA")
     api("com.google.guava:guava:31.1-jre")
 
     api("org.springframework.boot:spring-boot-starter-data-r2dbc")
@@ -22,13 +22,15 @@ dependencies {
     api("org.flywaydb:flyway-core")
     api("io.r2dbc:r2dbc-spi")
     api("io.r2dbc:r2dbc-pool")
-    api("io.r2dbc:r2dbc-postgresql")
-    api("org.postgresql:postgresql:42.3.4")
+    // api("io.r2dbc:r2dbc-postgresql:0.8.12.RELEASE")
+    api("org.postgresql:r2dbc-postgresql")
+    api("org.postgresql:postgresql")
 
     api("io.projectreactor.addons:reactor-extra:3.4.8")
-    api("org.codehaus.groovy:groovy:3.0.10")
+    api("org.codehaus.groovy:groovy:3.0.11")
     api("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
+    // Is there a spring-boot-starter handle it all.
     api("io.springfox:springfox-swagger2:3.0.0")
     api("io.springfox:springfox-swagger-ui:3.0.0")
     api("io.springfox:springfox-spring-webflux:3.0.0")
@@ -36,7 +38,7 @@ dependencies {
     api("org.zalando:logbook-core")
     api("org.zalando:logbook-netty")
 //    api("org.zalando:logbook-logstash")
-//    api("net.logstash.logback:logstash-logback-encoder:6.6")
+//    api("net.logstash.logback:logstash-logback-encoder")
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }

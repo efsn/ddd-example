@@ -4,7 +4,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-    val kotlinVersion = "1.6.21"
+    val kotlinVersion = "1.7.0"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
@@ -37,9 +37,10 @@ allprojects {
 
     dependencies {
         implementation(kotlin("reflect"))
-        implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.1-native-mt"))
+        implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.3"))
         implementation(platform(SpringBootPlugin.BOM_COORDINATES))
         implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.3"))
+        implementation(platform("io.jsonwebtoken:jjwt-root:0.11.5"))
         implementation(platform("com.github.cloudyrock.mongock:mongock-core-bom:4.3.8"))
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
         implementation(platform("org.testcontainers:testcontainers-bom:1.17.2"))
