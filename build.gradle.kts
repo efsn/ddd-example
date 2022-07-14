@@ -37,7 +37,7 @@ allprojects {
 
     dependencies {
         implementation(kotlin("reflect"))
-        implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.3"))
+        implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4"))
         implementation(platform(SpringBootPlugin.BOM_COORDINATES))
         implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.3"))
         implementation(platform("io.jsonwebtoken:jjwt-root:0.11.5"))
