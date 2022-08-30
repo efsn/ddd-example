@@ -6,7 +6,7 @@ jobs:
 
     # VM for testcontainers to work
     machine:
-      image: ubuntu-2004:202111-02
+      image: ubuntu-2204:2022.08.1
       docker_layer_caching: true
 
     environment:
@@ -14,6 +14,7 @@ jobs:
       TERM: dumb
 
     steps:
+      - run: java --version
       - checkout
       - restore_cache:
           keys:
