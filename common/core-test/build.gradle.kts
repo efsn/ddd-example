@@ -20,7 +20,7 @@ dependencies {
     // TODO: kotlin not supported
     // api("com.github.hippoom:wiremock-contract-verifier:0.3.0")
 
-    api("io.mockk:mockk:1.12.4")
+    api("io.mockk:mockk:1.12.5")
     api("com.ninja-squad:springmockk:3.1.1")
     // Why kotest instead of jUnit5?
 

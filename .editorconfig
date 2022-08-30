@@ -20,7 +20,7 @@ spaces_around_brackets = inside
 indent_size = 4
 continuation_indent_size = 4
 ij_continuation_indent_size = 4
-disabled_rules = import-ordering, no-wildcard-imports
+ktlint_disabled_rules = import-ordering, no-wildcard-imports
 
 [*.{java, groovy, gradle}]
 indent_size = 4

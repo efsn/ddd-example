@@ -1,5 +1,5 @@
 plugins {
-    id("com.diffplug.spotless") version "6.7.2"
+    id("com.diffplug.spotless") version "6.10.0"
 }
 
 spotless {
@@ -21,7 +21,7 @@ spotless {
         importOrder("java", "javax", "com.acme", "")
         removeUnusedImports()
         // apply a specific flavor of google-java-format
-        googleJavaFormat("11").aosp().reflowLongStrings()
+        googleJavaFormat().aosp().reflowLongStrings()
         // make sure every file has the following copyright header.
         // optionally, Spotless can set copyright years by digging
         // through git history (see "license" section below)
@@ -30,15 +30,22 @@ spotless {
 
     kotlin {
         removeUnusedImports()
-    }
 
-    kotlin {
-        ktlint("0.45.2")
-            .userData(
-                mapOf(
-                    "editorconfig" to project.file(".editorconfig").absolutePath
-                )
+        ktlint().editorConfigOverride(
+            mapOf(
+                "max_line_length" to "",
+                "ij_kotlin_imports_layout" to "",
+                "ij_kotlin_packages_to_use_import_on_demand" to "",
+                "ktlint_code_style" to "",
+                "indent_style" to "",
+                "ij_kotlin_allow_trailing_comma" to "",
+                "insert_final_newline" to "",
+                "disabled_rules" to "",
+                "indent_size" to "",
+                "ij_kotlin_allow_trailing_comma_on_call_site" to "",
+                "ktlint_ignore_back_ticked_identifier" to "",
             )
+        )
 
         ktfmt()    // has its own section below
         licenseHeader("/* (C)\$YEAR */") // or licenseHeaderFile

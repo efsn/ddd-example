@@ -13,7 +13,7 @@ subprojects {
 }
 
 jacoco {
-    toolVersion = "0.8.7"
+    toolVersion = "0.8.8"
 }
 
 fun ConfigurableFileCollection.exclude(list: List<String>) = setFrom(asFileTree.matching { exclude(list) }.files)

@@ -4,15 +4,15 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-    val kotlinVersion = "1.7.0"
+    val kotlinVersion = "1.7.10"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
-    id("org.springframework.boot") version "2.7.0"
+    id("org.springframework.boot") version "2.7.3"
     jacoco
     id("io.gitlab.arturbosch.detekt") version "1.21.0"
-    id("com.diffplug.spotless") version "6.7.2"
+    id("com.diffplug.spotless") version "6.10.0"
 }
 
 group = "cn.example.ddd"
@@ -37,7 +37,7 @@ allprojects {
 
     dependencies {
         implementation(kotlin("reflect"))
-        implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.3"))
+        implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4"))
         implementation(platform(SpringBootPlugin.BOM_COORDINATES))
         implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.3"))
         implementation(platform("io.jsonwebtoken:jjwt-root:0.11.5"))
@@ -53,7 +53,7 @@ allprojects {
     tasks {
         withType<KotlinCompile> {
             kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_11.toString()
+                jvmTarget = JavaVersion.VERSION_17.toString()
                 freeCompilerArgs = listOf("-Xjsr305=strict")
             }
         }
@@ -94,12 +94,12 @@ allprojects {
 
     val compileTestKotlin: KotlinCompile by tasks
     compileTestKotlin.kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     // Config Detekt
     detekt {
-        toolVersion = "1.20.0"
+        toolVersion = "1.21.0"
         parallel = true
         buildUponDefaultConfig = true
         allRules = false
@@ -119,17 +119,13 @@ allprojects {
         java {
             importOrder()
             removeUnusedImports()
-            googleJavaFormat("1.13.0").aosp().reflowLongStrings()
+            googleJavaFormat().aosp().reflowLongStrings()
             licenseHeaderFile(rootProject.file(".license-header"))
         }
 
         kotlin {
-            ktlint("0.45.2")
-                .userData(
-                    mapOf(
-                        "editorconfig" to rootProject.file(".editorconfig").absolutePath
-                    )
-                )
+            ktlint()
+
             licenseHeaderFile(rootProject.file(".license-header"))
         }
 
@@ -153,7 +149,7 @@ tasks.named<BootJar>("bootJar") {
 
 // Config Jacoco
 jacoco {
-    toolVersion = "0.8.7"
+    toolVersion = "0.8.8"
 }
 
 fun ConfigurableFileCollection.exclude(list: List<String>) = setFrom(asFileTree.matching { exclude(list) }.files)

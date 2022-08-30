@@ -1,11 +1,11 @@
-FROM openjdk:11-jdk-slim as build
+FROM openjdk:17-jdk-slim as build
 
 WORKDIR /home
 
 ADD . /home
 RUN sh ./gradlew clean bootJar
 
-FROM openjdk:11-jre-slim
+FROM openjdk:17-jre-slim
 
 LABEL org.label-schema.docker.cmd="docker run -p 8080:8080 -d elmi/ddd-example:latest"
 
@@ -24,4 +24,4 @@ USER appuser
 
 EXPOSE 8080
 
-ENTRYPOINT ["bash","/home/appuser/entrypoint.sh"]
+ENTRYPOINT ["bash","entrypoint.sh"]

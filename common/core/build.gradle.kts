@@ -14,7 +14,7 @@ dependencies {
     api("javax.validation:validation-api:2.0.1.Final")
 
     api("io.jsonwebtoken:jjwt-api")
-    api("org.javassist:javassist:3.29.0-GA")
+    api("org.javassist:javassist:3.29.1-GA")
     api("com.google.guava:guava:31.1-jre")
 
     api("org.springframework.boot:spring-boot-starter-data-r2dbc")
@@ -27,7 +27,7 @@ dependencies {
     api("org.postgresql:postgresql")
 
     api("io.projectreactor.addons:reactor-extra:3.4.8")
-    api("org.codehaus.groovy:groovy:3.0.11")
+    api("org.codehaus.groovy:groovy:3.0.12")
     api("io.projectreactor.kotlin:reactor-kotlin-extensions")
 
     // Is there a spring-boot-starter handle it all.

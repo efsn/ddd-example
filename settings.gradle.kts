@@ -1,6 +1,6 @@
 rootProject.name = "ddd-example"
 
-files("common", "external", "service").forEach { dir ->
+files("common").forEach { dir ->
     dir.listFiles()?.forEach {
         if (it.isDirectory) {
             include(it.name)
@@ -8,3 +8,6 @@ files("common", "external", "service").forEach { dir ->
         }
     }
 }
+
+include("user")
+project(":user").projectDir = file("${rootProject.projectDir}/service/user")

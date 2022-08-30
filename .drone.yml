@@ -10,7 +10,7 @@ steps:
   #      - git pull -r
 
   - name: test
-    image: openjdk:11-jdk-slim
+    image: openjdk:17-jdk-slim
     commands:
       - ./gradlew clean classes
 

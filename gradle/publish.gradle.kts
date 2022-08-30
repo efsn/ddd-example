@@ -22,7 +22,6 @@ subprojects {
     }
 }
 
-
 // for build dependencies
 repositories {
     maven {
@@ -33,5 +32,3 @@ repositories {
         }
     }
 }
-
-

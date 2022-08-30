@@ -14,7 +14,7 @@ tasks {
 
 tasks.withType<ProcessResources> {
     copy {
-        from(file("$projectDir/git-hooks"))
+        from(file("$projectDir/scripts/pre-commit"))
         into(file("$projectDir/.git/hooks"))
         fileMode = 0b111101101
     }

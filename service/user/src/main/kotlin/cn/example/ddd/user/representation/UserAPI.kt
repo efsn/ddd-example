@@ -36,5 +36,8 @@ class UserAPI(
 
     @PostMapping
     @ApiOperation(value = "add", nickname = "add-user", notes = "add a user")
-    suspend fun add(@RequestBody @Valid request: UserCreateRequest) = UserCreateResponse(applicationService.add(request.toCommand()))
+    suspend fun add(
+        @RequestBody @Valid
+        request: UserCreateRequest
+    ) = UserCreateResponse(applicationService.add(request.toCommand()))
 }

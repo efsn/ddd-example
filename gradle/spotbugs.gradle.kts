@@ -1,18 +1,18 @@
 plugins {
-    id("com.github.spotbugs") version "5.0.6"
+    id("com.github.spotbugs") version "5.0.10"
 }
 
 apply(plugin = "com.github.spotbugs")
 
 // Config SpotBugs
 spotbugs {
-    toolVersion.set("5.0.6")
+    toolVersion.set("5.0.10")
     // reportsDir.set(file("${rootProject.buildDir}/spotbugs"))
 }
 
 dependencies {
     spotbugsPlugins("com.h3xstream.findsecbugs:findsecbugs-plugin:1.12.0")
-    // spotbugs("com.github.spotbugs:spotbugs:5.0.6")
+    // spotbugs("com.github.spotbugs:spotbugs:5.0.10")
 }
 
 // spotbugs / sonar-findbugs

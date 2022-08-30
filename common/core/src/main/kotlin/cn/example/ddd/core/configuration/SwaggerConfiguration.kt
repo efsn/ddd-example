@@ -84,7 +84,9 @@ class SwaggerConfiguration(private val resolver: TypeResolver) {
 
             return if (appliesTo(newType)) {
                 alternateFor(newType)
-            } else newType
+            } else {
+                newType
+            }
         }
 
         override fun appliesTo(type: ResolvedType): Boolean = rules.any { it.appliesTo(type) }
