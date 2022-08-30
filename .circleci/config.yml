@@ -6,7 +6,7 @@ jobs:
 
     # VM for testcontainers to work
     machine:
-      image: ubuntu-2204:2022.08.1
+      image: ubuntu-2204:2022.07.1
       docker_layer_caching: true
 
     environment:
