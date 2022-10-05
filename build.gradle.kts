@@ -43,7 +43,7 @@ allprojects {
         implementation(platform("io.jsonwebtoken:jjwt-root:0.11.5"))
         implementation(platform("com.github.cloudyrock.mongock:mongock-core-bom:4.3.8"))
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
-        implementation(platform("org.testcontainers:testcontainers-bom:1.17.3"))
+        implementation(platform("org.testcontainers:testcontainers-bom:1.17.5"))
 
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
 
