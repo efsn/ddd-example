@@ -11,7 +11,7 @@ plugins {
     kotlin("plugin.jpa") version kotlinVersion
     id("org.springframework.boot") version "2.7.3"
     jacoco
-    id("io.gitlab.arturbosch.detekt") version "1.21.0"
+    id("io.gitlab.arturbosch.detekt") version "1.22.0"
     id("com.diffplug.spotless") version "6.10.0"
 }
 
