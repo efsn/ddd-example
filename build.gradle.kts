@@ -45,7 +45,7 @@ allprojects {
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
         implementation(platform("org.testcontainers:testcontainers-bom:1.17.3"))
 
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0")
 
         // developmentOnly("org.springframework.boot:spring-boot-devtools")
     }
