@@ -39,7 +39,7 @@ allprojects {
         implementation(kotlin("reflect"))
         implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4"))
         implementation(platform(SpringBootPlugin.BOM_COORDINATES))
-        implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.3"))
+        implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2022.0.0"))
         implementation(platform("io.jsonwebtoken:jjwt-root:0.11.5"))
         implementation(platform("com.github.cloudyrock.mongock:mongock-core-bom:4.3.8"))
         implementation(platform("org.zalando:logbook-bom:2.14.0"))
